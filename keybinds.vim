@@ -278,3 +278,72 @@ if dein#tap('coc-clap')
     let g:which_key_map.c.t = 'Lsp Show Outline'
   endif
 endif
+""""""""""""""""""""""
+"  markdown-priview  "
+""""""""""""""""""""""
+if dein#tap('markdown-preview.nvim')
+	nnoremap <silent> <Leader>om  :<C-u>MarkdownPreview<CR>
+	if s:enable_whichkey
+		let g:which_key_map.o.m = 'open markdownPreview'
+	endif
+endif
+
+""""""""""
+"  dash  "
+""""""""""
+if dein#tap('dash.vim')
+  nnoremap <silent><localleader>d :Dash<CR>
+  if s:enable_whichkey
+    let g:which_key_localmap.d="open doc on Dash.app"
+  endif
+endif
+""""""""""""""""""""
+"  accelerated_jk  "
+""""""""""""""""""""
+if dein#tap('accelerated-jk')
+  "nmap <silent>j <Plug>(accelerated_jk_gj)
+  "nmap <silent>k <Plug>(accelerated_jk_gk)
+  "echom 'tab accelerated_jk_gk ...'
+endif
+""""""""""""""
+"  asterisk  "
+""""""""""""""
+"if dein#tap('vim-asterisk')
+"  map *   <Plug>(asterisk-g*)
+"  map g*  <Plug>(asterisk-*)
+"  map #   <Plug>(asterisk-g#)
+"  map g#  <Plug>(asterisk-#)
+"
+"  map z*  <Plug>(asterisk-z*)
+"  map gz* <Plug>(asterisk-gz*)
+"  map z#  <Plug>(asterisk-z#)
+"  map gz# <Plug>(asterisk-gz#)
+"endif
+"""""""""""""""
+"  choosewin  "
+"""""""""""""""
+if dein#tap('vim-choosewin')
+  nmap -         <Plug>(choosewin)
+  nmap <Leader>- :<C-u>ChooseWinSwapStay<CR>
+  if s:enable_whichkey
+    let g:which_key_map['-'] = 'Choose window'
+  endif
+endif
+""""""""""""""""""
+"  vim-smoothie  "
+""""""""""""""""""
+if dein#tap('vim-smoothie')
+  nnoremap <silent> <C-f> :<C-U>call smoothie#forwards()<CR>
+  nnoremap <silent> <C-b> :<C-U>call smoothie#backwards()<CR>
+  nnoremap <silent> <C-d> :<C-U>call smoothie#downwards()<CR>
+  nnoremap <silent> <C-u> :<C-U>call smoothie#upwards()<CR>
+endif
+""""""""""""""""""
+"  vim-quickrun  "
+""""""""""""""""""
+if dein#tap('vim-quickrun')
+  nnoremap <silent> <Leader>cr :QuickRun<CR>
+  if s:enable_whichkey
+    let g:which_key_map.c.r = 'Quick Run'
+  endif
+endif

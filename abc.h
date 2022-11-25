@@ -1,0 +1,3 @@
+void ggg() {
+  printf("gggg");
+}
