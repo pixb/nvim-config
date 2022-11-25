@@ -150,8 +150,8 @@ function! InitCaw() abort
 endfunction
 
 if dein#tap('caw.vim')
-    autocmd FileType * call InitCaw()
-    call InitCaw()
+	autocmd FileType * call InitCaw()
+	call InitCaw()
 endif
 " coc-------------------------------------------------------------------------
 if dein#tap('coc.nvim')

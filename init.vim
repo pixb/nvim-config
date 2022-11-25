@@ -61,10 +61,6 @@ if dein#load_state('/home/pix/.cache/dein')
 	call dein#add('luochen1990/rainbow', { 
 				\ 'on_ft': '[ html,css,javascript,javascriptreact,vue,go,python,c,cpp,lua,rust,vim,less,stylus,sass,scss,json,ruby,scala,toml,php,haskell]', 
 				\ 'hook_source': 'let g:rainbow_active = 1'})
-	" context_filetype
-	call dein#add('Shougo/context_filetype.vim') 
-	" Caw
-	call dein#add('tyru/caw.vim', {'depends': 'context_filetype.vim', 'on_map': '{ nx: <Plug> }'})
 	" coc
 	call dein#add('neoclide/coc.nvim', {'merge':0, 'build': 'yarn install --frozen-lockfile', 'hook_add': 'source  $VIM_PATH/modules/module-coc.vim', 'hook_source': 'source $VIM_PATH/modules/module-lsp.vim'})
 	" coc-clap
@@ -75,6 +71,10 @@ if dein#load_state('/home/pix/.cache/dein')
 	call dein#add('glepnir/spaceline.vim',{ 'on_event': ['BufReadPre', 'BufNew'], 'hook_add': "let g:spaceline_seperate_style='slant-cons'"})
 	" oceanic-material
 	call dein#add('glepnir/oceanic-material')
+	" context_filetype
+	call dein#add('Shougo/context_filetype.vim')
+	" Caw
+	call dein#add('tyru/caw.vim', {'depends': 'context_filetype.vim', 'on_map': '{ nx: <Plug> }'})
         " Required:
         call dein#end()
         call dein#save_state()
@@ -93,3 +93,4 @@ endif
 call utils#source_file($VIM_PATH,'keybinds.vim') 
 " 加载主题
 call theme#init()
+
