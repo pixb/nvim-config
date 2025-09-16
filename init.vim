@@ -32,8 +32,21 @@ if dein#load_state('/home/pix/.cache/dein')
 	call dein#local($VIM_PATH . '/dev', { 'frozen': 1, 'merged': 0 })
 	" Defx
 	call dein#add('Shougo/defx.nvim', {'on_cmd': 'Defx', 'hook_source': 'source  $VIM_PATH/modules/module-defx.vim'})
-	call dein#add('kristijanhusak/defx-git')
-	call dein#add('kristijanhusak/defx-icons')
+  call dein#add('kristijanhusak/defx-git', { 'on_source': "let g:defx_git#indicators = {
+      \ 'Modified'  : '•',
+      \ 'Staged'    : '✚',
+      \ 'Untracked' : 'ᵁ',
+      \ 'Renamed'   : '≫',
+      \ 'Unmerged'  : '≠',
+      \ 'Ignored'   : 'ⁱ',
+      \ 'Deleted'   : '✖',
+      \ 'Unknown'   : '⁇'
+      \ }"})
+  call dein#add('kristijanhusak/defx-icons', {
+        \ 'on_source': 'defx.nvim',
+        \ 'hook_add': "let g:defx_icons_column_length = 1\n
+        \ let g:defx_icons_mark_icon = ''"
+        \ })
 	" WhickKey
 	call dein#add('liuchengxu/vim-which-key', {'on_cmd': '[WhichKey, Whichkey!]',
 	\ 'hook_add': join(["let g:which_key_map =  { 'name' : 'Leader'}",
@@ -144,6 +157,29 @@ if dein#load_state('/home/pix/.cache/dein')
         \ "let g:quickrun_no_default_key_mappings = 1"
         \ ], "\n")
         \ })
+  call dein#add('simnalamburt/vim-mundo', {
+        \ 'on_cmd': 'MundoToggle'
+        \ })
+  call dein#add('easymotion/vim-easymotion', {
+    \ 'on_map': "{ n: <Plug> }",
+    \ 'hook_source':join([
+    \ "let g:EasyMotion_do_mapping = 0",
+    \ "let g:EasyMotion_prompt = 'Jump to → '",
+    \ "let g:EasyMotion_keys = 'fjdkswbeoavn'",
+    \ "let g:EasyMotion_smartcase = 1",
+    \ "let g:EasyMotion_use_smartsign_us = 1"], "\n")
+    \ })
+
+  call dein#add('tpope/vim-dadbod')
+
+  call dein#add('kristijanhusak/vim-dadbod-ui', {
+    \ 'on_cmd': [ 'DBUIToggle','DBUIAddConnection','DBUI','DBUIFindBuffer','DBUIRenameBuffer' ],
+    \ 'on_source': 'vim-dadbod',
+    \ 'hook_source': 'source $VIM_PATH/modules/module-dadbod-ui.vim'})
+  call dein#add('jreybert/vimagit', {
+    \ 'on_cmd': 'Magit',
+    \ 'hook_source': 'autocmd User VimagitEnterCommit startinsert'})
+
 
   " Required:
   call dein#end()

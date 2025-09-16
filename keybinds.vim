@@ -347,3 +347,41 @@ if dein#tap('vim-quickrun')
     let g:which_key_map.c.r = 'Quick Run'
   endif
 endif
+"""""""""""""""
+"  vim-mundo  "
+"""""""""""""""
+if dein#tap('vim-mundo')
+  nnoremap <silent> <Leader>m :MundoToggle<CR>
+  if s:enable_whichkey
+    let g:which_key_map.m = 'MundoToggle'
+  endif
+endif
+""""""""""""""""""""
+"  vim-easymotion  "
+""""""""""""""""""""
+if dein#tap('vim-easymotion')
+  nmap gsj <Plug>(easymotion-w)
+  nmap gsk <Plug>(easymotion-b)
+  nmap gsf <Plug>(easymotion-overwin-f)
+  nmap gss <Plug>(easymotion-overwin-f2)
+endif
+"""""""""""""""""""
+"  vim-dadbod-ui  "
+"""""""""""""""""""
+if dein#tap('vim-dadbod-ui')
+  nnoremap <silent> <Leader>od :DBUIToggle<CR>
+  if s:enable_whichkey
+    let g:which_key_map.o.d = 'open database'
+  endif
+endif
+"""""""""""""
+"  vimagit  "
+"""""""""""""
+if dein#tap('vimagit')
+  nnoremap <silent> <Leader>gg :Magit<CR>
+  if s:enable_whichkey
+    let g:which_key_map.g.g = 'Magit'
+  endif
+endif
+
+
